@@ -1,0 +1,130 @@
+/* ProjectPage.css */
+
+.project-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.design-side,
+.build-side {
+  margin: 20px auto;
+  max-width: 400px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.project-block {
+  width: 300px; /* Set a fixed width for all project blocks */
+  height: 250px; /* Set a fixed height for all project blocks */
+  margin: 0 auto 20px; /* Center the project blocks horizontally */
+  position: relative;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* Hide overflowing content (e.g., project name and description) */
+}
+
+.project-block:hover {
+  transform: scale(1.1) translateY(-8px);
+  box-shadow: 0 8px 16px rgb(0, 0, 0);
+}
+
+.project-block img {
+  width: 100%; /* Set the image to cover the entire project block */
+  height: 100%; /* Make the image fill the height of the project block */
+  object-fit: cover; /* Maintain the aspect ratio of the image */
+  border-radius: 8px 8px 0 0;
+  transition: transform 0.3s ease;
+}
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Align project name and description to the bottom */
+  height: 30%; /* Adjust the height of the project name and description area */
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  border-radius: 0 0 8px 8px;
+  transition: opacity 0.3s ease;
+}
+
+.project-block:hover .project-info {
+  opacity: 0; /* When hovering over the project block, hide the project info */
+}
+
+.project-link-clickme {
+  display: inline-block;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.936);
+  padding: 15px 8px;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.2s ease;
+  opacity: 0; /* Initially, set opacity to 0 */
+  position: absolute; /* Position the button relative to the project block */
+  top: 50%; /* Center the button vertically */
+  left: 50%; /* Center the button horizontally */
+  transform: translate(-50%, -50%); /* Center the button precisely */
+}
+
+.project-block:hover .project-link-clickme {
+  opacity: 1; /* When hovering over the project block, make the button visible */
+}
+
+.project-block h3 {
+  margin-top: 10px;
+}
+
+.project-block p {
+  font-size: 14px;
+}
+
+/* Add style for the project links (buttons) */
+.project-link {
+  display: inline-block;
+  text-decoration: none;
+  color: #00000076; /* Set text color to white */
+  padding: 15px 8px;
+  border-radius: 5px; /* Set a small value for the border-radius to create a square shape */
+  margin-top: 90px;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+.project-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Center the <h2> element in each section */
+.project-section h2 {
+  text-align: center;
+}
+
+/* Dramatic animations on hover */
+.project-block:hover {
+  transform: scale(1.1) translateY(-8px);
+  box-shadow: 0 8px 16px rgb(0, 0, 0);
+}
+
+.project-block:hover img {
+
+  height: 100%; /* Make the image fill the height of the project block when hovering */
+  object-fit: cover; /* Maintain the aspect ratio of the image when hovering */
+}
+
+
+
+
+.design-side h2,
+.build-side h2 {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: flickerPopUp 1.5s infinite;
+}

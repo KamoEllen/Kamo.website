@@ -1,0 +1,123 @@
+/* src/components/LandingPage.css */
+
+/* LandingPage.css */
+.text-white p,
+.text-white h2,
+.text-white h1,
+.text-white li {
+  color: white;
+}
+
+/* LandingPage.css */
+.text-white,
+.text-white h1 {
+  color: white;
+}
+
+
+.landing-page {
+    display: flex;
+ 
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+  
+    /* Set initial background color to transparent and transition it */
+    background-color: transparent;
+    transition: background-color 3s ease;
+  }
+  
+  /* Keyframe animation to slide the containers from sides to center */
+  @keyframes slideInFromSides {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  .image-container {
+    width: 300px; /* Set the desired width */
+    height: 500px; /* Set the desired height */
+  }
+  .container {
+    max-width: 400px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    /* Set initial position to start from the sides */
+    transform: translateX(-100%);
+    opacity: 0;
+    /* Use transition for smooth slide-in effect */
+    transition: transform 1s ease, opacity 1s ease;
+  }
+  
+  .container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .container h1 {
+    margin-top: 10px;
+  }
+  
+  .container ul {
+    margin-top: 10px;
+    list-style: disc;
+    padding-left: 20px;
+  }
+  
+  .container h2 {
+    margin-top: 20px;
+  }
+  
+  /* Add some space between the initial position of containers and the center */
+  .space-between {
+    height: 400px; /* Adjust the height to add more space */
+  }
+  
+  /* When the landing-page is darkened */
+  .landing-page.darken {
+    color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.6); /* Darken the background */
+
+
+  }
+
+  
+  /* When the container is shown on screen */
+  .container.show {
+    /* Reset position and opacity to show the container */
+    transform: translateX(0);
+    opacity: 1;
+  }
+/* Add style for the cute message */
+.cute-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+/* When the landing-page is darkened */
+.landing-page.darken {
+  color: rgba(255, 255, 255, 0.797);
+  background-color: rgb(0, 0, 0); /* Darken the background */
+}
+
+/* When the container is shown on screen */
+.container.show {
+  /* Reset position and opacity to show the container */
+  transform: translateX(0);
+  opacity: 1;
+}
