@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import './ProjectPage.css';
 import picture1 from '../assets/projectimg.png';
 import picture01 from '../assets/picture01.jpeg';
-import picture2 from '../assets/picture2.png';
 import picture02 from '../assets/picture02.jpeg';
 import picture3 from '../assets/picture3.png';
 import picture03 from '../assets/picture03.png';

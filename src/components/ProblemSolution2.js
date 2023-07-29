@@ -22,61 +22,6 @@ const ProblemSolutionn = () => {
     marginBottom: '40px', 
   };
 
-  const importantStyle = {
-    fontWeight: 'bold',
-  };
-
-  const h1Style = {
-    fontSize: '28px',
-    fontWeight: 'bold',
-  };
-
-  const h2Style = {
-    fontSize: '24px',
-    fontWeight: 'bold',
-  };
-
-  const h3Style = {
-    fontSize: '20px',
-    fontWeight: 'bold',
-    marginBottom: '10px',
-  };
-
-  const pStyle = {
-    lineHeight: '1.5',
-    marginBottom: '15px',
-  };
-
-  const hrStyle = {
-    border: 'none',
-    borderTop: '1px solid #ccc',
-    margin: '20px 0',
-  };
-
-  const imgStyle = {
-    maxWidth: '100%',
-    height: 'auto',
-    display: 'block',
-    margin: '20px auto',
-  };
-
-  const timelineContainerStyle = {
-    display: 'flex',
-    flexDirection: 'row',
-  };
-
-  const timelineContentStyle = {
-    flex: 1,
-  };
-
-  const whitePaperStyle = {
-    whiteSpace: 'pre-wrap',
-    textAlign: 'center',
-  };
-
-  const iframeContainerStyle = {
-    border: '1px solid rgba(0, 0, 0, 0.1)',
-  };
 
   return (
     <div style={containerStyle}>
@@ -130,7 +75,7 @@ const ProblemSolutionn = () => {
       </div>
 </div>
       <br />
-      <h1></h1>
+
       <div style={sectionStyle}>
       <h6>WHITE PAPER RESEARCH</h6>
 

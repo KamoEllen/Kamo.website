@@ -1,6 +1,5 @@
 import React from 'react';
 import './Header.css';
-import { Link } from 'react-router-dom';
 import EllenKganakgaPDF from '../assets/Ellen Kganakga.pdf';
 
 const Header = () => {

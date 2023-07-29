@@ -69,7 +69,7 @@ const ProblemSolution = () => {
       </div>
 
       <br />
-      <h1></h1>
+
       <h6>WHITE PAPER RESEARCH</h6>
 
       <p>
