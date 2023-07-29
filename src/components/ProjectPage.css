@@ -7,6 +7,11 @@
   height: 100vh;
 }
 
+.design-side h2,
+.build-side h2 {
+  color: black;
+}
+
 .design-side,
 .build-side {
   margin: 20px auto;
