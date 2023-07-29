@@ -158,7 +158,9 @@ With Emily's persona as my guiding star, the design journey was a delightful and
   <br />
   <div className="iframe-container">
 
-<iframe style={{ border: '1px solid rgba(0, 0, 0, 0.1)' }} width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FtBBQWjtEa8029Rzku6bviy%2FResturant%3Ftype%3Ddesign%26node-id%3D1-3519%26t%3DBR0vMC8MoYWLXKg0-1%26scaling%3Dscale-down%26page-id%3D0%253A1%26starting-point-node-id%3D1%253A3252%26mode%3Ddesign" allowfullscreen></iframe>
+<iframe 
+title="Figma Prototypee"
+style={{ border: '1px solid rgba(0, 0, 0, 0.1)' }} width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FtBBQWjtEa8029Rzku6bviy%2FResturant%3Ftype%3Ddesign%26node-id%3D1-3519%26t%3DBR0vMC8MoYWLXKg0-1%26scaling%3Dscale-down%26page-id%3D0%253A1%26starting-point-node-id%3D1%253A3252%26mode%3Ddesign" allowfullscreen></iframe>
   </div>
   </div>
 </div>

@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header-buttons">
-        <a href="https://github.com/kamoellen" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/KamoEllen/Kamo.website" target="_blank" rel="noopener noreferrer">
           <button>Check Website Code</button>
         </a>
        

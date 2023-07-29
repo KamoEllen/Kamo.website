@@ -67,9 +67,7 @@ const ProjectPage = () => {
     // Add more build projects here...
   ];
 
-  const handleClick = (url) => {
-    window.location.href = url; // Navigate to the specified URL
-  };
+
 
   return (
     <div className="project-page" target="_blank">
