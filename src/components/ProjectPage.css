@@ -7,6 +7,11 @@
   height: 100vh;
 }
 
+.design-side h2,
+.build-side h2 {
+  color: black;
+}
+
 .design-side,
 .build-side {
   margin: 20px auto;
@@ -16,6 +21,7 @@
 h2 {
   font-size: 24px;
   margin-bottom: 10px;
+  color: black; /*added color */
 }
 
 .project-block {
