@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@mui/styles';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/Grid';
 
 import picture1 from '../assets/projectimg.png';
 import picture01 from '../assets/picture01.jpeg';
@@ -13,13 +12,13 @@ import picture4 from '../assets/picture4.png';
 import projectimg2 from '../assets/projectimg2.png';
 
 const useStyles = makeStyles((theme) => ({
-
-    projectPage: {
+  projectPage: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     paddingTop: theme.spacing(2),
     padding: theme.spacing(0, 2),
+  },
   categoryButtons: {
     display: 'flex',
     justifyContent: 'center',
@@ -106,12 +105,13 @@ const useStyles = makeStyles((theme) => ({
   projectBlockDescription: {
     fontSize: '14px',
   },
+  hideProjects: {
+    display: 'none',
+  },
 }));
 
 const ProjectPage = () => {
   const classes = useStyles();
-
-const ProjectPage = () => { 
 
   const designProjects = [
     {
@@ -126,22 +126,18 @@ const ProjectPage = () => {
       image: projectimg2,
       figmaLink: '/projectsolution2',
     },
-    
     {
       title: 'UX Work',
       description: '',
       image: picture4,
       figmaLink: 'https://www.figma.com/proto/93X3VYg5IJeO4JdnbzFoSV/Portfolio?type=design&node-id=55-293&t=6WrTOCeidOaRavj1-1&scaling=scale-down&page-id=0%3A1&starting-point-node-id=55%3A293&show-proto-sidebar=1&mode=design',
     },
-
     {
       title: 'Owls - Donation',
       description: 'Together, We Can Secure Their Future!',
       image: picture3,
       figmaLink: 'https://www.figma.com/proto/FVf3j3ktt1Si9atbNq2QLd/OWLS-ENDANGERED?type=design&node-id=4-4&t=Ra3inQNMu58kxpAD-1&scaling=contain&page-id=0%3A1&mode=design',
     },
-    
-
     // Add more design projects here...
   ];
 
@@ -164,74 +160,66 @@ const ProjectPage = () => {
       image: picture03,
       figmaLink: 'https://tinyurl.com/B2Blandingpage',
     },
-
-
+    // Add more build projects here...
   ];
 
-  // State to determine the active category (i.e., "i build" or "i design")
   const [activeCategory, setActiveCategory] = useState('i design');
 
-  // Function to handle button click and update active category
   const handleCategoryButtonClick = (category) => {
     setActiveCategory(category);
   };
 
   return (
-    <div className={classes.projectPage} target="_blank">
+    <div className={classes.projectPage}>
       <div className={classes.categoryButtons}>
         <Button
-          className={`${classes.categoryButton} ${
-            activeCategory === 'i design' && classes.activeButton
-          }`}
+          className={`${classes.categoryButton} ${activeCategory === 'i design' && classes.activeButton}`}
           onClick={() => handleCategoryButtonClick('i design')}
         >
           I Design
         </Button>
         <Button
-          className={`${classes.categoryButton} ${
-            activeCategory === 'i build' && classes.activeButton
-          }`}
+          className={`${classes.categoryButton} ${activeCategory === 'i build' && classes.activeButton}`}
           onClick={() => handleCategoryButtonClick('i build')}
         >
           I Build
         </Button>
       </div>
-      <div className={classes.projectSection}>
-        {activeCategory === 'i design' &&
-          designProjects.map((project, index) => (
-            <div key={index} className={classes.projectLink}>
-
-              <Link to={project.figmaLink}>
-                <div className={classes.projectBlock}>
-                  <img src={project.image} alt={project.title} className={classes.projectImage} />
-                  <div className={classes.projectInfo}>
-                    <h3 className={classes.projectBlockTitle}>{project.title}</h3>
-                    <p className={classes.projectBlockDescription}>{project.description}</p>
-                  </div>
-                  <div className={classes.projectLinkClickme}>Click Me</div>
+      <div className={`${classes.projectSection} ${activeCategory === 'i design' ? '' : classes.hideProjects}`}>
+        {designProjects.map((project, index) => (
+          <div key={index} className={classes.projectLink}>
+            <Link to={project.figmaLink}>
+              <div className={classes.projectBlock}>
+                <img src={project.image} alt={project.title} className={classes.projectImage} />
+                <div className={classes.projectInfo}>
+                  <h3 className={classes.projectBlockTitle}>{project.title}</h3>
+                  <p className={                   classes.projectBlockDescription}>{project.description}</p>
                 </div>
-              </Link>
-            </div>
-          ))}
-        {activeCategory === 'i build' &&
-          buildProjects.map((project, index) => (
-            <div key={index} className={classes.projectLink}>
-
-              <a href={project.figmaLink} target="_blank" rel="noopener noreferrer">
-                <div className={classes.projectBlock}>
-                  <img src={project.image} alt={project.title} className={classes.projectImage} />
-                  <div className={classes.projectInfo}>
-                    <h3 className={classes.projectBlockTitle}>{project.title}</h3>
-                    <p className={classes.projectBlockDescription}>{project.description}</p>
-                  </div>
-                  <div className={classes.projectLinkClickme}>Click Me</div>
+                <div className={classes.projectLinkClickme}>Click Me</div>
+              </div>
+            </Link>
+          </div>
+        ))}
+      </div>
+      <div className={`${classes.projectSection} ${activeCategory === 'i build' ? '' : classes.hideProjects}`}>
+        {buildProjects.map((project, index) => (
+          <div key={index} className={classes.projectLink}>
+            <a href={project.figmaLink} target="_blank" rel="noopener noreferrer">
+              <div className={classes.projectBlock}>
+                <img src={project.image} alt={project.title} className={classes.projectImage} />
+                <div className={classes.projectInfo}>
+                  <h3 className={classes.projectBlockTitle}>{project.title}</h3>
+                  <p className={classes.projectBlockDescription}>{project.description}</p>
                 </div>
-              </a>
-            </div>
-          ))}
+                <div className={classes.projectLinkClickme}>Click Me</div>
+              </div>
+            </a>
+          </div>
+        ))}
       </div>
     </div>
   );
 };
 
 export default ProjectPage;
+
