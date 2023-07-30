@@ -52,10 +52,10 @@ const ProjectPage = () => {
       figmaLink: 'https://tinyurl.com/travel2southafrica/',
     },
     {
-      title: 'ChatGPT Clone',
+      title: 'Blog',
       description: '',
       image: picture02,
-      figmaLink: 'https://github.com/KamoEllen/ChatGPT-clone-part-2-js-ai-',
+      figmaLink: 'https://ornate-mousse-194f6f.netlify.app/',
     },
     {
       title: 'B2B Landing Page',
