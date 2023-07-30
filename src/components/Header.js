@@ -1,25 +1,41 @@
 import React from 'react';
-import './Header.css';
 import EllenKganakgaPDF from '../assets/Ellen Kganakga.pdf';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <header className="header">
-      <div className="header-buttons">
-        <a href="https://github.com/KamoEllen/Kamo.website" target="_blank" rel="noopener noreferrer">
-          <button>Check Website Code</button>
-        </a>
-       
-      </div>
-      <div className="header-links">
-        <a href={EllenKganakgaPDF} download>Resume</a> {/* Add the "download" attribute to prompt the file download */}
-        <a href="/" >Home</a>
-        <a href="https://www.linkedin.com/in/kamogelokganakga/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://github.com/kamoellen" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://www.behance.net/kamoellenkganakga" target="_blank" rel="noopener noreferrer">Behance</a>
-        <a href="https://dribbble.com/KamogeloKganakga" target="_blank" rel="noopener noreferrer">Dribbble</a>
-      </div>
-    </header>
+    <AppBar position="static" color="default" className="header">
+      <Toolbar>
+        <div className="header-buttons">
+          <Button variant="contained" color="primary" target="_blank" href="https://github.com/KamoEllen/Kamo.website">
+            Check Website Code
+          </Button>
+        </div>
+        <div className="header-links">
+          <Button variant="contained" color="secondary" href={EllenKganakgaPDF} download>
+            Resume
+          </Button>
+          <Button color="inherit" component={Link} to="/">
+            Home
+          </Button>
+          <Button color="inherit" href="https://www.linkedin.com/in/kamogelokganakga/" target="_blank" rel="noopener noreferrer">
+            LinkedIn
+          </Button>
+          <Button color="inherit" href="https://github.com/kamoellen" target="_blank" rel="noopener noreferrer">
+            GitHub
+          </Button>
+          <Button color="inherit" href="https://www.behance.net/kamoellenkganakga" target="_blank" rel="noopener noreferrer">
+            Behance
+          </Button>
+          <Button color="inherit" href="https://dribbble.com/KamogeloKganakga" target="_blank" rel="noopener noreferrer">
+            Dribbble
+          </Button>
+        </div>
+      </Toolbar>
+    </AppBar>
   );
 };
 
