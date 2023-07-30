@@ -11,7 +11,7 @@ const Header = () => {
       <Toolbar>
         <div className="header-buttons">
           <Button variant="contained" color="primary" target="_blank" href="https://github.com/KamoEllen/Kamo.website">
-            Check Website Code
+            GitRepo
           </Button>
         </div>
         <div className="header-links">
