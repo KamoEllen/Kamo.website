@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@mui/styles';
+import Grid from '@mui/material/Grid';
 import EllenImage from '../assets/Ellen.jpg';
 import Header from './Header';
 import ProjectPage from './ProjectPage';
@@ -27,8 +28,9 @@ const useStyles = makeStyles((theme) => ({
     transition: 'transform 1s ease, opacity 1s ease',
   },
   imageContainer: {
-    width: '300px',
-    height: '500px',
+    width: '100%', 
+    height: 'auto', 
+    borderRadius: '8px',
   },
   message: {
     position: 'absolute',
@@ -47,6 +49,7 @@ const LandingPage = () => {
   const classes = useStyles();
 
   const images = [EllenImage, EllenKImage, EllenKKImage];
+
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -78,16 +81,16 @@ const LandingPage = () => {
     };
   }, []);
 
-  return (
+   return (
     <div>
       <Header />
       {showMessage && <div className={classes.message}>Hi, Glad You Could Make It</div>}
-      <div className={`${classes.landingPage} ${showContainers ? classes.darken : ''}`}>
-        <div className={`${classes.container} ${showContainers ? classes.show : ''}`}>
+      <Grid container spacing={2} className={`${classes.landingPage} ${showContainers ? classes.darken : ''}`}>
+        <Grid item xs={12} md={6} className={`${classes.container} ${showContainers ? classes.show : ''}`}>
           <img src={images[currentImageIndex]} alt="Ellen Kganakga - UX Designer Web Developer" className={classes.imageContainer} />
           <h1 className="text-white">Ellen Kganakga</h1>
-        </div>
-        <div className={`${classes.container} ${showContainers ? classes.show : ''}`}>
+        </Grid>
+        <Grid item xs={12} md={6} className={`${classes.container} ${showContainers ? classes.show : ''}`}>
           <div style={{ color: 'white' }}>
             <p>I embody the perfect blend of outgoing personality, a strong understanding of user needs, and the ability to serve as an effective middleman between customers, developers, and designers!</p>
             <h2>Skills:</h2>
@@ -105,8 +108,8 @@ const LandingPage = () => {
               <li>Performance Optimization</li>
             </ul>
           </div>
-        </div>
-      </div>
+        </Grid>
+      </Grid>
       <div className="space-between"></div>
       <ProjectPage />
     </div>
