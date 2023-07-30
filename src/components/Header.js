@@ -34,7 +34,7 @@ const Header = () => {
 
         </div>
     <div className="header-buttons">
-          <Button variant="contained" color="secondary" href={EllenKganakgaPDF} download>
+          <Button variant="contained" color="secondary" href={EllenKganakgaPDF} download  style={{ color: 'black', backgroundColor: 'white' }}>
             Resume
           </Button>
         </div>
