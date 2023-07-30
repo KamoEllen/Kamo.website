@@ -31,7 +31,10 @@ const Header = () => {
           <Button color="inherit" href="https://dribbble.com/KamogeloKganakga" target="_blank" rel="noopener noreferrer">
             Dribbble
           </Button>
-     <Button variant="contained" color="secondary" href={EllenKganakgaPDF} download>
+
+        </div>
+    <div className="header-buttons">
+          <Button variant="contained" color="secondary" href={EllenKganakgaPDF} download>
             Resume
           </Button>
         </div>
