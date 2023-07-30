@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { makeStyles } from '@mui/styles';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
-import './ProjectPage.css';
+
 import picture1 from '../assets/projectimg.png';
 import picture01 from '../assets/picture01.jpeg';
 import picture02 from '../assets/picture02.jpeg';
