@@ -20,14 +20,16 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: theme.spacing(2),
   },
   categoryButtons: {
+    display: 'flex',
+    justifyContent: 'center',
     marginBottom: theme.spacing(2),
   },
   categoryButton: {
-    marginRight: theme.spacing(2),
-    borderRadius: '5px',
     textTransform: 'none',
     fontSize: '16px',
     padding: theme.spacing(1, 2),
+    borderRadius: '5px',
+    marginRight: theme.spacing(1),
   },
   activeButton: {
     backgroundColor: theme.palette.common.black,
@@ -107,52 +109,124 @@ const useStyles = makeStyles((theme) => ({
 const ProjectPage = () => {
   const classes = useStyles();
 
-  // ... Your project data ...
+const ProjectPage = () => { 
 
-  // Rest of the code remains the same...
+  const designProjects = [
+    {
+      title: 'Blog Platform UX/UI',
+      description: 'Where every click reveals fascinating stories.',
+      image: picture1,
+      figmaLink: '/projectsolution1',
+    },
+    {
+      title: 'Blog Platform UX/UI',
+      description: 'Where every click reveals fascinating stories.',
+      image: projectimg2,
+      figmaLink: '/projectsolution2',
+    },
+    
+    {
+      title: 'UX Work',
+      description: '',
+      image: picture4,
+      figmaLink: 'https://www.figma.com/proto/93X3VYg5IJeO4JdnbzFoSV/Portfolio?type=design&node-id=55-293&t=6WrTOCeidOaRavj1-1&scaling=scale-down&page-id=0%3A1&starting-point-node-id=55%3A293&show-proto-sidebar=1&mode=design',
+    },
 
+    {
+      title: 'Owls - Donation',
+      description: 'Together, We Can Secure Their Future!',
+      image: picture3,
+      figmaLink: 'https://www.figma.com/proto/FVf3j3ktt1Si9atbNq2QLd/OWLS-ENDANGERED?type=design&node-id=4-4&t=Ra3inQNMu58kxpAD-1&scaling=contain&page-id=0%3A1&mode=design',
+    },
+    
+
+    // Add more design projects here...
+  ];
+
+  const buildProjects = [
+    {
+      title: 'Travel',
+      description: '',
+      image: picture01,
+      figmaLink: 'https://tinyurl.com/travel2southafrica/',
+    },
+    {
+      title: 'Blog',
+      description: '',
+      image: picture02,
+      figmaLink: 'https://ornate-mousse-194f6f.netlify.app/',
+    },
+    {
+      title: 'B2B Landing Page',
+      description: '',
+      image: picture03,
+      figmaLink: 'https://tinyurl.com/B2Blandingpage',
+    },
+
+
+  ];
+
+  // State to determine the active category (i.e., "i build" or "i design")
+  const [activeCategory, setActiveCategory] = useState('i design');
+
+  // Function to handle button click and update active category
+  const handleCategoryButtonClick = (category) => {
+    setActiveCategory(category);
+  };
 
   return (
-    <div className="project-page" target="_blank">
-      <div className="design-side project-section">
-        <h2>I Design</h2>
-        <br />
-        {designProjects.map((project, index) => (
-          <div key={index} className="project-link">
-            <Link to={project.figmaLink}>
-              <div className="project-block">
-                <img src={project.image} alt={project.title} />
-                <div className="project-info">
-                  <h3>{project.title}</h3>
-                  <p>{project.description}</p>
-                </div>
-                <div className="project-link-clickme">
-                  Click Me
-                </div>
-              </div>
-            </Link>
-          </div>
-        ))}
+    <div className={classes.projectPage} target="_blank">
+      <div className={classes.categoryButtons}>
+        <Button
+          className={`${classes.categoryButton} ${
+            activeCategory === 'i design' && classes.activeButton
+          }`}
+          onClick={() => handleCategoryButtonClick('i design')}
+        >
+          I Design
+        </Button>
+        <Button
+          className={`${classes.categoryButton} ${
+            activeCategory === 'i build' && classes.activeButton
+          }`}
+          onClick={() => handleCategoryButtonClick('i build')}
+        >
+          I Build
+        </Button>
       </div>
-      <div className="build-side project-section">
-        <h2>I Build</h2>
-        <br />
-        {buildProjects.map((project, index) => (
-          <div key={index} className="project-link">
-            <a href={project.figmaLink} target="_blank" rel="noopener noreferrer">
-              <div className="project-block">
-                <img src={project.image} alt={project.title} />
-                <div className="project-info">
-                  <h3>{project.title}</h3>
-                  <p>{project.description}</p>
+      <div className={classes.projectSection}>
+        {activeCategory === 'i design' &&
+          designProjects.map((project, index) => (
+            <div key={index} className={classes.projectLink}>
+
+              <Link to={project.figmaLink}>
+                <div className={classes.projectBlock}>
+                  <img src={project.image} alt={project.title} className={classes.projectImage} />
+                  <div className={classes.projectInfo}>
+                    <h3 className={classes.projectBlockTitle}>{project.title}</h3>
+                    <p className={classes.projectBlockDescription}>{project.description}</p>
+                  </div>
+                  <div className={classes.projectLinkClickme}>Click Me</div>
                 </div>
-                <div className="project-link-clickme">
-                  Click Me
+              </Link>
+            </div>
+          ))}
+        {activeCategory === 'i build' &&
+          buildProjects.map((project, index) => (
+            <div key={index} className={classes.projectLink}>
+
+              <a href={project.figmaLink} target="_blank" rel="noopener noreferrer">
+                <div className={classes.projectBlock}>
+                  <img src={project.image} alt={project.title} className={classes.projectImage} />
+                  <div className={classes.projectInfo}>
+                    <h3 className={classes.projectBlockTitle}>{project.title}</h3>
+                    <p className={classes.projectBlockDescription}>{project.description}</p>
+                  </div>
+                  <div className={classes.projectLinkClickme}>Click Me</div>
                 </div>
-              </div>
-            </a>
-          </div>
-        ))}
+              </a>
+            </div>
+          ))}
       </div>
     </div>
   );
