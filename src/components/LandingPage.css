@@ -1,6 +1,4 @@
-/* src/components/LandingPage.css */
 
-/* LandingPage.css */
 .text-white p,
 .text-white h2,
 .text-white h1,
@@ -42,20 +40,19 @@
   }
   .image-container {
     width: 300px; /* Set the desired width */
-    height: 500px; 
+    height: 500px; /* Set the desired height */
   }
-.container {
-  width: 100%; 
-  max-width: 400px; 
-  border: 1px solid #ccc;
-  padding: 20px;
-  border-radius: 8px;
-  /* Set initial position to start from the sides */
-  transform: translateX(-100%);
-  opacity: 0;
-  /* Use transition for smooth slide-in effect */
-  transition: transform 1s ease, opacity 1s ease;
-}
+  .container {
+    max-width: 400px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    /* Set initial position to start from the sides */
+    transform: translateX(-100%);
+    opacity: 0;
+    /* Use transition for smooth slide-in effect */
+    transition: transform 1s ease, opacity 1s ease;
+  }
   
   .container img {
     max-width: 100%;
