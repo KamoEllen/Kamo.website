@@ -15,9 +15,7 @@ const Header = () => {
           </Button>
         </div>
         <div className="header-links">
-          <Button variant="contained" color="secondary" href={EllenKganakgaPDF} download>
-            Resume
-          </Button>
+         
           <Button color="inherit" component={Link} to="/">
             Home
           </Button>
@@ -32,6 +30,9 @@ const Header = () => {
           </Button>
           <Button color="inherit" href="https://dribbble.com/KamogeloKganakga" target="_blank" rel="noopener noreferrer">
             Dribbble
+          </Button>
+     <Button variant="contained" color="secondary" href={EllenKganakgaPDF} download>
+            Resume
           </Button>
         </div>
       </Toolbar>
