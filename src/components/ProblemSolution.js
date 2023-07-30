@@ -134,6 +134,7 @@ const ProblemSolution = () => {
   <br />
   <div className="iframe-container">
     <iframe
+    title="Figma Prototype"
       style={{ border: '1px solid rgba(0, 0, 0, 0.1)' }}
       width="800"
       height="450"
