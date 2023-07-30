@@ -13,12 +13,13 @@ import picture4 from '../assets/picture4.png';
 import projectimg2 from '../assets/projectimg2.png';
 
 const useStyles = makeStyles((theme) => ({
-  projectPage: {
+
+    projectPage: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     paddingTop: theme.spacing(2),
-  },
+    padding: theme.spacing(0, 2),
   categoryButtons: {
     display: 'flex',
     justifyContent: 'center',
@@ -39,6 +40,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    width: '100%',
   },
   projectLink: {
     textDecoration: 'none',
